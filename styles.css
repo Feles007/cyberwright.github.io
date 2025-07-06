@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 1rem;
+    font-family: "omnium-wide", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+p {
+    font-family: "omnium", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.logo {
+    width: 60vw;
+}
+
+.tagline {
+    color: #7e7e7e;
+    font-style: italic;
+    margin-bottom: .7rem;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.icon {
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    background: linear-gradient(145deg, #e0e0e0, #bfbfbf);
+    border-radius: 50%;
+    box-shadow: 0 0 5px #aaa;
+    margin-right: 8px;
+    transition: all 0.2s ease;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+    font-size: 1.1rem;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #999;
+    padding: 0.4rem;
+    border-radius: 90px 40px 40px 90px;
+    background: linear-gradient(145deg, #e2e2e2, #c1c1c1);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), inset 0 -1px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav a:hover .icon {
+    background: linear-gradient(145deg, #eeeeee, #cecece);
+    box-shadow: 0 0 5px #a2daf0;
+    transition: all 0.2s ease;
+}
+
+nav a:active .icon {
+    background: linear-gradient(145deg, #bfbfbf, #e0e0e0);
+    box-shadow: inset 0 0 3px #aaa, 0 0 3px #a2daf0;
+    transition: all 0.2s ease;
+}
+
+.intro {
+    margin-top: 3rem;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid #aaa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 0 20px rgba(160, 160, 160, 0.6);
+    backdrop-filter: blur(8px);
+
+}
+
+.intro a {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.cursor {
+    animation: blink 1s step-start 0s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
