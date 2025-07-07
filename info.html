@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parsecs.rest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/zvv8lfm.css">
+    <link href="/img/favicon.gif" rel="shortcut icon" type="image/x-icon">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <a href="index.html"><img class="logo" src="/img/logo.png"></a>
+            <p class="tagline">a quiet place between stars</p>
+        </header>
+
+        <!--============================ nav ============================-->
+
+        <nav>
+            <a class="tablink" onclick="showTab(event, 'l1')" id="defaultOpen" href="#"><span
+                    class="icon"></span>station info</a>
+            <a class="tablink" onclick="showTab(event, 'l2')" href="#"><span class="icon"></span>artifacts</a>
+            <a class="tablink" onclick="showTab(event, 'l3')" href="#"><span class="icon"></span>comms</a>
+            <a class="tablink" onclick="showTab(event, 'l4')" href="#"><span class="icon"></span>map room</a>
+        </nav>
+        <!--============================ main ============================-->
+
+        <div class="main">
+            <!--============================ home ============================-->
+
+
+            <div id="l1" class="tabcontent">
+                <h4>station info</h4>
+                <p>perioddd</p>
+            </div>
+
+
+
+            <!--============================ link 2 ============================-->
+
+
+            <div id="l2" class="tabcontent">
+                <h4>station info</h4>
+                <p>perioddd</p>
+            </div>
+
+            <!--============================ link 3 ============================-->
+
+            <div id="l3" class="tabcontent">
+                <h4>station info</h4>
+                <p>perioddd</p>
+            </div>
+
+
+            <!--============================ contact ============================-->
+
+            <div id="l4" class="tabcontent">
+                <h4>station info</h4>
+                <p>perioddd</p>
+            </div>
+
+            <!--============================ main end ============================-->
+        </div>
+
+        <!--============================ footer ============================-->
+
+        <footer>
+            <p>coded by hand with vscodium, stardust, & love <span class="cursor">_</span></p>
+            <a href="https://www.flickr.com/photos/nasawebbtelescope/54624487063/" target="_blank">background credits
+            </a>
+            <p>© 2025 parsecs.rest</p>
+        </footer>
+
+    </div>
+
+    <!--============================ scripts ============================-->
+
+    <script>
+        function showTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
+</body>
+
+</html>
