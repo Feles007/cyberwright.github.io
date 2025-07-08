@@ -1,33 +1,51 @@
 * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(175, 175, 175) rgba(255, 255, 255, 0.267);
     margin: 0;
     box-sizing: border-box;
-    font-family: "omnium-wide", monospace;
-    color: #615d59
-}
-
-.tabcontent {
-    animation: fadeEffect .5s;
-}
-
-@keyframes fadeEffect {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
 
 body {
+    font-family: "omnium-wide", monospace;
+    color: #615d59;
+    cursor: url("/img/pointer.png") 1 5, default;
     min-height: 100vh;
     background-image: url("/img/bullet-cluster.png");
     background-attachment: fixed;
 }
 
-a {
+::selection,
+::-moz-selection {
+    background: black;
+    color: white;
+    text-shadow: none;
+}
+
+.tabcontent {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+a,
+.icon,
+.logo,
+pre>a {
     color: #3884b6;
-    text-decoration: dashed underline 1px #3884b6
+    text-decoration: dashed underline 1px #3884b6;
+    cursor: url("/img/help.png") 1 5, pointer;
 }
 
 a:hover {
@@ -43,7 +61,6 @@ a[target="_blank"]::after {
 p,
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
@@ -52,6 +69,30 @@ h6 {
 
 .cool {
     color: #e98e3a;
+    font-family: "omnium-wide", monospace;
+}
+
+span {
+    font-family: monospace;
+}
+
+.board .invis {
+    color: #e2e4e6;
+}
+
+.okay {
+
+    color: lime;
+}
+
+.warn {
+
+    color: orange;
+}
+
+.err {
+    color: red;
+    font-weight: bold;
 }
 
 .wrapper {
@@ -69,9 +110,10 @@ h6 {
 
 .tagline {
     color: #7e7e7e;
-    margin-bottom: .7rem;
+    margin-bottom: 0.7rem;
     text-align: right;
-    text-shadow: 0 0 7px rgb(255, 255, 255);
+    text-shadow: 1px 0 0 white, -1px 0 0 white, 0 1px 0 white, 0 -1px 0 white,
+        0 0 10px white;
 }
 
 nav {
@@ -95,28 +137,32 @@ nav {
 nav a {
     display: flex;
     align-items: center;
-    margin: .2rem 1rem;
+    margin: 0.2rem 1rem;
     font-size: 1.1rem;
     color: #0e517e;
     text-decoration: none;
     border-bottom: 1px solid #999;
     padding: 0.4rem;
     border-radius: 90px 40px 40px 90px;
-    background: linear-gradient(145deg, rgba(226, 226, 226, .5), rgba(193, 193, 193, .5));
+    background: linear-gradient(145deg,
+            rgba(226, 226, 226, 0.5),
+            rgba(193, 193, 193, 0.5));
     backdrop-filter: blur(8px);
-    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), inset 0 -1px 2px rgba(0, 0, 0, 0.2), 0 1px 4px #c3c3c3;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.2), 0 1px 4px #c3c3c3;
     width: 139px;
 }
 
 nav a:hover {
-    background: linear-gradient(145deg, rgba(226, 226, 226, .6), rgba(193, 193, 193, .6));
+    background: linear-gradient(145deg,
+            rgba(226, 226, 226, 0.6),
+            rgba(193, 193, 193, 0.6));
     color: #e98e3a;
     text-decoration: none;
 }
 
 nav a:hover .icon {
     background: linear-gradient(145deg, #e4e4e4, #999999);
-
 }
 
 nav a:hover .icon::before {
@@ -135,80 +181,170 @@ nav a:hover .icon::before {
 
 nav a:active {
     color: #e98e3a;
-
 }
 
 nav a:active .icon {
     background: linear-gradient(145deg, #8f8f8f, #cfcfcf);
 }
 
+.main ul {
+    font-style: normal;
+    padding-top: 0.4rem;
+}
+
+.main li::marker {
+    content: "▌ ";
+    line-height: 1em;
+    color: #615d59;
+}
+
+.main li:has(a:hover)::marker {
+    content: "▐ ";
+    color: #e98e3a;
+}
+
 .main {
     margin-top: 1rem;
     width: 80vw;
-    max-width: 500px;
-    background: rgba(255, 255, 255, 0.28);
+    max-width: 650px;
     border: 1px solid #9eabb4;
     border-radius: 12px;
     padding: 1rem;
-    box-shadow: 0 0 20px rgba(160, 160, 160, 0.7);
-    backdrop-filter: blur(4px);
+    font-size: large;
+    background: linear-gradient(145deg,
+            rgba(226, 226, 226, 0.5),
+            rgba(193, 193, 193, 0.5));
+    backdrop-filter: blur(8px);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.2), 0 1px 4px #c3c3c3;
 
 }
 
-.italic p {
+.main p,
+.main h3 {
+    padding-top: 0.5em;
     font-style: italic;
+    text-shadow: 1px 0 0 white, -1px 0 0 white, 0 1px 0 white, 0 -1px 0 white,
+        0 0 10px white;
 }
 
-.main p {
-    padding-top: .5em;
-}
-
-.main blockquote {
+.board {
     display: block;
-    padding-left: .7rem;
+    padding: .7rem;
+    margin: 0.5rem 0;
     border-left: 2px solid #615d59;
     border-right: 2px solid #615d59;
     border-radius: 4px;
-    color: #e98e3a;
-    background-color: rgba(255, 255, 255, 0.493);
+    background-color: #e2e4e6;
+}
+
+.board p {
+    padding: 0;
     font-family: monospace;
     font-size: 1rem;
     font-weight: 600;
     font-style: normal;
-    margin: .5rem 0;
+    color: #e98e3a;
+    text-shadow: none;
 }
 
-.main ul {
-    font-style: normal;
-    padding-top: .4rem
+.board.ind p {
+    text-indent: -1em;
+    /* Pull the first line back */
+    padding-left: 1em;
+    /* Push all lines forward */
 }
 
-li::marker {
-    content: "▌ ";
-    line-height: 1em;
-    color: #615d59
+.terminal {
+    display: block;
+    padding: 0.7rem;
+    border: 3px ridge #aaa;
+    background-color: #050016;
+    margin: 0.5rem 0;
+    color: white;
+    font-family: monospace;
+    font-size: 1rem;
+    scrollbar-color: #aaa rgba(0, 0, 0, 0.247);
 }
 
-li:has(a:hover)::marker {
-    content: "▐ ";
+.terminal *::selection,
+.terminal *::-moz-selection {
+    color: black;
+    background-color: white;
+}
+
+.term-mh {
+    max-height: 15rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+.terminal-screen {
+    display: none;
+}
+
+.terminal-screen.active {
+    display: block;
+}
+
+.terminal a {
+    font-family: monospace;
+    color: #0069e2;
+    text-decoration: 1px dashed underline #0069e2;
+    font-weight: bold;
+
+}
+
+.terminal a:hover {
+    background-color: white;
+    color: blue;
+    text-decoration: underline blue;
 }
 
 footer {
     margin-top: 1rem;
     font-size: 0.8rem;
+    width: 75vw;
+    max-width: 600px;
 }
 
 footer p {
-
-    color: #999999
+    text-shadow: 1px 0 0 white, -1px 0 0 white, 0 1px 0 white, 0 -1px 0 white,
+        0 0 10px white;
+    color: #999999;
 }
 
 .cursor {
     animation: blink 1s step-start 0s infinite;
 }
 
+.terminal .cursor {
+    animation: blink 1s step-start 0s infinite;
+    color: white
+}
+
 @keyframes blink {
     50% {
         opacity: 0;
     }
+}
+
+@keyframes glitchFlash {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.restart {
+    color: #ff4848;
+
+}
+
+.benormal {
+    color: white
 }

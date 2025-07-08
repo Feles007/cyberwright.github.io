@@ -7,62 +7,108 @@
     <title>parsecs.rest</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/zvv8lfm.css">
-    <link href="/img/favicon.gif" rel="shortcut icon" type="image/x-icon">
+    <link href="img/favicon.gif" rel="shortcut icon" type="image/x-icon">
+    <script type="text/javascript" src="scripts-n-styles/tabs.js"></script>
+    <script type="text/javascript" src="scripts-n-styles/terminal.js"></script>
+    <script type="text/javascript" src="scripts-n-styles/clock.js" defer></script>
 </head>
 
 <body>
     <div class="wrapper">
         <header>
-            <a href="index.html"><img class="logo" src="/img/logo.png"></a>
+            <a href="index.html"><img class="logo" src="img/logo.png"></a>
             <p class="tagline">a quiet place between stars</p>
         </header>
 
         <!--============================ nav ============================-->
 
         <nav>
-            <a class="tablink" onclick="showTab(event, 'l1')" id="defaultOpen" href="#"><span
-                    class="icon"></span>station info</a>
-            <a class="tablink" onclick="showTab(event, 'l2')" href="#"><span class="icon"></span>artifacts</a>
-            <a class="tablink" onclick="showTab(event, 'l3')" href="#"><span class="icon"></span>comms</a>
-            <a class="tablink" onclick="showTab(event, 'l4')" href="#"><span class="icon"></span>map room</a>
+            <a class="tablink" onclick="showTab(event, 'l1')" id="defaultOpen"><span class="icon"></span>station
+                info</a>
+            <a class="tablink" onclick="showTab(event, 'l2')"><span class="icon"></span>logs</a>
+            <a class="tablink" onclick="showTab(event, 'l3')"><span class="icon"></span>comms</a>
+            <a class="tablink" onclick="showTab(event, 'l4')"><span class="icon"></span>map</a>
         </nav>
         <!--============================ main ============================-->
 
         <div class="main">
-            <!--============================ home ============================-->
 
+            <!--============================ info ============================-->
 
             <div id="l1" class="tabcontent">
-                <h4>station info</h4>
-                <p>perioddd</p>
+                <h3>this rest area provides services, designed for transient bodies and wandering hulls.</h3>
+                <p>you walk into the main building. it's not very big, just a lobby and some bathrooms. there's a couple of doors to other wings. there's some
+                    vending machines, if you're feeling peckish. you look at the more detailed, technical information
+                    terminals along the wall...</p>
+
+                <div class="terminal">
+                    <pre><span class="uts-time-static">[UTS] 128309.193 :: [UTC-0] 04:33:</span><span class="uts-seconds">??</span>
+╔════════════════════════════════════════════════════╗
+║ $ <b>PARSEC'S REST & GENERAL STATUS</b>                   ║
+║ ├ GRAVITY ARRAY.<b>></b> <span class="okay">stable</span>;                          ║
+║ ├ BIO-SPHERE....<b>></b> <span class="okay">stable</span>;                          ║
+║ ├ LIFE SUPPORT..<b>></b> <span class="err">ATTN REQUIRED</span>;                   ║
+║ └ VISITORS......<b>></b> <span class="okay">1 verified</span> : <span class="err">1 UNVERIFIED</span>;       ║
+╚════════════════════════════════════════════════════╝</pre>
+                </div>
+
+                <p>you see one about the owner of the place, but there's not a lot of information...</p>
+
+                <div class="terminal">
+                    <pre><span class="uts-time-static">[UTS] 128309.193 :: [UTC-0] 04:33:</span><span class="uts-seconds">??</span>
+╔════════════════════════════════════════════════════╗
+║ $ <b>PARSEC'S REST & MANAGEMENT</b>                       ║
+║ ├ FED. ID CODE..<b>></b> <span class="err">UNAUTHORIZED</span>;                    ║
+║ ├ NODE CLAIM....<b>></b> signed by UNAUTHORIZED;          ║
+║ ├ SYS USER......<b>></b> root;                            ║
+║ ├ STATUS........<b>></b> <span class="warn">unknown</span>;                         ║
+║ ├ LAST MESSAGE..<b>></b> "It should run fine without      ║
+║ │                 me [UNINTELLIGIBLE].";           ║
+║ └ <SPAN CLASS="err">ERR: UNEXPECTED END OF DATA</SPAN>;                     ║
+╚════════════════════════════════════════════════════╝</pre>
+                </div>
+
             </div>
 
 
-
-            <!--============================ link 2 ============================-->
-
+            <!--============================ logs ============================-->
 
             <div id="l2" class="tabcontent">
-                <h4>station info</h4>
-                <p>perioddd</p>
+                <h3>you check the logs terminal...</h3>
+                <p>it looks like you can make a selection. (okay not yet)</p>
+
+                <div class="terminal">
+                    <pre>
+<span class="uts-time-static">[UTS] 128309.193 :: [UTC-0] 04:33:</span><span class="uts-seconds">??</span>
+╔════════════════════════════════════════════════════╗
+║ $ PARSEC'S REST :: LOGS                            ║
+║ ├ [128309.193 @ 04:15:<span class="benormal uts-seconds">??</span>] - <span class="warn">ongoing process</span>        ║
+║ ├ [128309.193 @ 04:12:28]                          ║
+║ ├ [128309.193 @ 03:58:16]                          ║
+║ ├ [128309.193 @ --:--:--]
+║ ├ [128309.179 @ 20:18:23]
+║ ├
+╚════════════════════════════════════════════════════╝</pre>
+                </div>
             </div>
 
-            <!--============================ link 3 ============================-->
+            <!--============================ comms ============================-->
 
             <div id="l3" class="tabcontent">
-                <h4>station info</h4>
-                <p>perioddd</p>
+                <h3>you check the comms terminal...</h3>
+                <p>...but nothing is displayed.</p>
             </div>
 
 
-            <!--============================ contact ============================-->
+
+            <!--============================ map ============================-->
 
             <div id="l4" class="tabcontent">
-                <h4>station info</h4>
-                <p>perioddd</p>
+                <h3>you check the map terminal...</h3>
+                <p>...but nothing is displayed.</p>
             </div>
 
-            <!--============================ main end ============================-->
+            <!--======================-->
         </div>
 
         <!--============================ footer ============================-->
@@ -70,7 +116,7 @@
         <footer>
             <p>coded by hand with vscodium, stardust, & love <span class="cursor">_</span></p>
             <a href="https://www.flickr.com/photos/nasawebbtelescope/54624487063/" target="_blank">background credits
-            </a>
+            </a> <a href="https://www.rw-designer.com/cursor-set/power-glove" target="_blank">cursor credits</a>
             <p>© 2025 parsecs.rest</p>
         </footer>
 
@@ -78,24 +124,12 @@
 
     <!--============================ scripts ============================-->
 
-    <script>
-        function showTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
+   
 
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
-    </script>
+
+
+
+
 </body>
 
 </html>
